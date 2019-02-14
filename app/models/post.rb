@@ -8,6 +8,6 @@ class Post < ActiveRecord::Base
   def clickbait_title
     clickbait = ["Won't Believe", "Secret", "Top [number]", "Guess"]
 
-    clickbait.any? { |clickbait| title.includes?(clickbait) }
+    clickbait.any? { |clickbait| title.include?(clickbait) }
   end
 end
