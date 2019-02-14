@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   def clickbait_title
     clickbait = /Won't\sBelieve|Secret|Top\s\d|Guess/i
 
-    if title && title !~ clickbait
+    if title !~ clickbait
       errors.add(:title, 'must include clickbait')
     end
   end
