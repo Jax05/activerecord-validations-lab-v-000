@@ -6,7 +6,8 @@ class Post < ActiveRecord::Base
   validate :clickbait_title
 
   def clickbait_title
-    if title && !title.include?(/Won't Believe|Secret|Top \d|Guess/)
+    clickbait = /Won't\sBelieve|Secret|Top\s\d|Guess/i
+    if title && !title.include?(clickbait)
       errors.add(:title, 'must include clickbait')
     end
     # clickbait = ["Won't Believe", "Secret", "Top [number]", "Guess"]
