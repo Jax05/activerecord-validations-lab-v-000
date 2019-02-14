@@ -5,8 +5,6 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: { in: %w(Fiction Non-Fiction) }
   validate :clickbait_title
 
-  private
-
   def clickbait_title
     clickbait = ["Won't Believe", "Secret", "Top [number]", "Guess"]
 
