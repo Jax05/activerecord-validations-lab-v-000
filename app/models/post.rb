@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
 
     # title.include?(clickbait)
 
-    if !clickbait.each { |bait| title.include?(bait) }
+    unless title.include?(clickbait.split)
       errors.add(:title, 'must include clickbait')
     end
   end
