@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
   validate :clickbait_title
 
   def clickbait_title
+    clickbait = ["Won't Believe", "Secret", "Top [number]", "Guess"]
 
+    clickbait.any? { |clickbait| title.includes?(clickbait) }
   end
 end
